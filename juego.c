@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define COLUMNAS 5
-#define FILAS 5
+#define COLUMNAS 2
+#define FILAS 2
 typedef char tmat[FILAS][COLUMNAS];
 typedef struct coordenada
 {
@@ -13,12 +13,18 @@ typedef struct coordenada
 }coordenada_t;
 
 typedef struct personaje{
-    char perry;
+    char inicial;
     int vida;
     int energia;
     bool camuflado;
     coordenada_t posicion;
 } personaje_t;
+
+typedef struct familiar
+{
+    coordenada_t posicion;
+    char inicial_nombre;
+} familiar_t;
 
 
 void imprimir_tablero(tmat tablero);
@@ -80,17 +86,30 @@ int main(){
 
     //1. CREAMOS OBJETO AGENTE
     personaje_t agente;
+    familiar_t candace;
+
 
     //2. COMPLETAMOS LOS ATRIBUTOS DE PERRY
-    agente.perry='P';
+    agente.inicial='P';
     agente.camuflado=false;
     agente.vida=3;
     agente.energia=100;
 
+    // agregando candace
+    candace.inicial_nombre='C';
+
+
     // PARA COLOCAR POSICION DEBEMOS LLAMAR A LA FUNCION
-    cargar_ubicacion(tablero,&fila,&columna,agente.perry);
+    // cargo a perry
+    cargar_ubicacion(tablero,&fila,&columna,agente.inicial);
     agente.posicion.fil=fila;
     agente.posicion.col=columna;
+    // cargar candace
+    cargar_ubicacion(tablero,&fila,&columna,candace.inicial_nombre);
+    candace.posicion.fil=fila;
+    candace.posicion.col=columna;
+
+
 
     //MOSTRAMOS EL TABLERO CON LOS PERSONAJES
     imprimir_tablero(tablero);

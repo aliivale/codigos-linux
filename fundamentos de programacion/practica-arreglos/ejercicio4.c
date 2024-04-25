@@ -1,44 +1,26 @@
 #include <stdio.h>
-#include <stdiobool.h>
+#include <stdbool.h>
 
-/*definimos tipo de vector*/
-typedef float tvec;
+#define NO_OCUPADO -1
+#define MAX_FISICO 100
+typedef float tvec[MAX_FISICO];
 
-void solicitar_total_numeros(int* cantidad_numeros){
-	printf("Ingrese la cantidad total de numeros a ingresar: ");
-	scanf("%d",cantidad_numeros);
-	printf("%d",*cantidad_numeros);
-}
+//como la posiciones son >= 0 entonces podemos inicializar en -1. -1 = posicion no ocupada
+void inicializar_vec_posicion(tvec vec_posiciones,int* cantidad_numeros);
+void solicitar_contenido_posicion(int* cantidad_numeros,int* x, int* i, tvec vec_posiciones);
 
-void solicitar_contenido_posicion(int* cantidad_numeros,int* x, int* i,vec_posiciones){
-	printf("Inserte posicion donde guardar el numero: ");
-	scanf("%d",i);
-	while(i>0 && i<cantidad_numeros && listar_vec_posicion(vec_posiciones,i,cantidad_numeros)){
-		printf("Inserte posicion donde guardar el numero: ");
-		scanf("%d",i);
-	
-	
-	
-	}
-}
-
-bool listar_vec_posicion(tvec vec_posiciones,int* i, int* cantidad_numeros){
-	validar=true;
-	int iterador=0;
-	while (iterador<cantidad_numeros && validar){
-		if(vec_posiciones[iterador] == i){
-			validar=false;
-		}
-		iterador++;
-	}
-
-	return validar;
-}
 void inicializar_vec_posicion(tvec vec_posiciones, int* cantidad_numeros){
 	int i;
-	for(i=0; i<cantidad_numeros; i++){
-		vec_posiciones[i]=-1;
+	for (i=0; i < *cantidad_numeros; i++){
+		vec_posiciones[i]=NO_OCUPADO;
 	}
+}
+
+void solicitar_contenido_posicion(int* cantidad_numeros, int* x, int* i, tvec vec_posiciones){
+	printf("Ingrese un numero x: ");
+	scanf("%d",x);
+	printf("Ingrese posicion para el numero, (valores menores a 0 para terminar): ");
+	scanf("%d",i);
 }
 
 int main(){

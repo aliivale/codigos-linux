@@ -1,0 +1,69 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+header{
+    background-color: #f067bc;
+}
+
+nav li{
+    /* los pone al costado del otro */
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+h1,a,h2{
+    font-family: "Monserrat", sans-serif;
+}
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    /* recomendable usar em porque se adapta para momentos zoom */
+    font-size: 2em; 
+}
+ul{
+    list-style: none;
+}
+a{
+    color:black;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+a:hover{
+    background-color: rgb(212, 31, 154);
+    color: white;
+}
+form{
+    margin:3em;
+    margin-top: 0;
+    padding: 1em;
+    background-color: #d5bacb;
+    border: 1px solid grey;
+    border-radius: 1em;
+}
+
+form input{
+    border-radius: 5px;
+    border: 1px solid white;
+    width: 100%;
+    padding: 0.5em;
+}
+
+form label{
+    display: block;
+    font-weight: bold;
+}
+/* label.required sin espacio, dice TODOS los labels que tengan la clase required */
+form label .required{
+    color:red;
+}
+
+form .horizontal .campo{
+    display: inline-block;
+    /* sirve para indicar cuanto debe ocupar el elemento en la pantalla */
+    width:49%; 
+}

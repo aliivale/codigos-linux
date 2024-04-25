@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript vs HTML</title>
+</head>
+<body>
+    <h1>Clas de JS</h1>
+    <!-- llamamos a la funcion desde html con atritbuto onclick -->
+    <button onclick="imprimir()">Hace click aca</button>
+    <!-- con script usamos JS. se pone dentro y al final del body -->
+    <script src="./calculadora.js"></script>
+    <!-- puedo tener mucha etiquetas scripts -->
+    <script>
+        let num1 = prompt("numero1");
+        let num2 = prompt("numero2");
+        let resultado=suma(parseInt(num1),parseInt(num2));
+
+        alert(resultado);
+
+    </script>
+    <script>
+        function imprimir(){
+            console.log("Hola mundo");
+        }
+    </script>
+</body>
+</html>
+<!--  <script>
+        // para ver el resultado en google: Inspeccionar, seccion consola
+        function suma(num1,num2){
+            return num1+num2;
+        }
+        let num1=4;
+        let num2=8;
+        console.log("La suma es: " + suma(num1,num2));
+        
+        // alert es como un messagebox: paracido a las cookies, pero no te muestra la pagina hasta que le des bola
+        // alert("Te amo David");
+        // otra forma de mostrar numeros en print, usar comillas invertidas. tecla donde esta el }]`` alt gr + la comilla (dos veces) para que aparezcan
+        console.log(`Felicidades ${n="Alisson"}!`); 
+
+        // inputdialog combinado con el alert
+        prompt("Ingresa tu nombre");
+
+
+    </script>--> -->
+
+
+
+
+
