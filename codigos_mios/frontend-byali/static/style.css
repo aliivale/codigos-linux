@@ -1,48 +1,29 @@
+:root{
+    --bg-color: #EDEDED; /* color del fondo */
+    --primary-color: white; /* color de las letras */
+    --secondary-color:#121212; /* lo mismo que el anterior pero al reves */
+    --third-color:#FFED00; /* este es muy variable, lo use en el boton de Conoce más y en el Registrate */
+    --login-bg:#4F4F4F; /* color del fondo del login */
+    --header-footer-bgcolor:#000000; /* color del fondo del footer */
+    --login-stroke: #A7A7A7; /* borde del login */
+    --button-unselected-color: #838383; /* boton desseleccionado */
+    --buttons-login-extra: #8A821C; /* botones de google y facebook en el login */
+    --placeholder-color: #A5A5A5; /* color de la letra de Mail, Contraseña, etc */
+    --background-label:#383838;
+    --cancionesmasescuchadas-bg: #242124; /* esto refiere al fondo de la sección */
+    --cancionesmasescuchadas-buttoncontainer: #474747; /* esto refiere al fondo del contenedor de los botones*/
+    --cancionesmasescuchadas-button-color: #D2D2D2; /* el color del boton de play por ej */
+
+    --discografia-bg: #CCCCCC; /* el fondo de discografía */
+    
+    /* fuente de toda la pag */
+    --primary-font: "Plus Jakarta Sans", sans-serif;
+}
+
 *{
     margin: 0;
     padding: 0;
 }
-/* .discografia{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(160, 149, 149);
-}
-.sec-discos{
-    
-    
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    margin-left: 40px;
-    margin-right: 40px;
-    
-    width: 100%;
-
-
-     display:flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 100%;
-    max-height: max-content;
-    
-    
-    
-} 
-.albums{
-    display: grid;
-    justify-content: center;
-    align-items:center;
-    
-    grid-template-columns: repeat(3,minmax(250px,1fr));
-    
-    gap:20px 5px; 
-    width:100%;
-}
-*/
-
-/* contenedor */
-
 #discografia{
     background-color: #a59f9f;
     display: flex;
@@ -56,16 +37,6 @@
     max-width: 1100px;
     margin-left: auto;
 }
-
-/* persona__columna */
-.album-img img{
-    width: 100%;
-    object-fit: cover;
-    height: 100%;
-    border-radius: 20px;
-
-}
-
 .album-img{
     box-sizing: border-box;
     display: flex;
@@ -78,12 +49,51 @@
     rgba(0, 0, 0, 0.63);
     border-radius: 20px;
     cursor:pointer;
+    transition: 1s;
+    position: relative;
+}
+
+.album-img img{
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    object-fit: cover;
+    height: 100%;
+}
+.album-img:hover{
+    transform: scale(1.05);
+    z-index: 1;
+}
+.info-disco{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(67,63,63, 0.90);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s;
+}
+.info-disco:hover{
+    opacity: 1;
+}
+.info-disco h3{
+    font-size: 25px;
+    color: white;
+    margin-bottom:15px;
+}
+.info-disco p{
+    padding: 10px;
+    font-size: 18px;
+    color: white;
 }
 
 
-
-
-#discografia .sec-discos{
+.sec-discos{
     width: 90%;
     max-width: 1100px;
     margin:40px auto; 
@@ -92,60 +102,164 @@
     grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
 }
 
+/* -----------------LOGUIN--------------------------- */
 
-/* .album-disco{
-    box-sizing: border-box;
-    width:100%;
-    height: 100%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+.sec-sesion{
+    margin: 10px auto;
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: var(--login-bg);
+    display: flex;
+    align-items: left;
+    flex-direction: column;
 }
-.album-disco figure{
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 px 15px 25px rgba(0,0,0,0,50);
-    cursor:pointer;
+.sec-sesion h3{
+    padding: 20px 20px 10px 0;
+    width: 400px;
+    margin-top: 0;
+    color:var(--primary-color);
 }
-.album-disco figure img{
-    width: 100%;
-    height: 100%;
-    transition: all 500ms ease-out;
-
-}
-.album-disco figure .info-disco{
-    position: absolute;
-    top:0;
-    width: 100%;
-    height: 100%;
-    background: rgba(11,103,123,0.6);
-    transition: all 500ms ease-out;
-    opacity:0;
-    visibility: hidden;
-    text-align: center;
+.sec-input{
+    width: 400px;
+    height: 40px;
+    margin:20px 0 10px 0;
+    border-radius: 8px;
+    background-color: var(--background-label);
+    text-indent: 15px;
+    color: var(--bg-color);
+    border: 1px solid transparent; 
 }
 
-.album-disco figure:hover > .info-disco{
-    opacity: 1;
-    visibility: visible;
+.sec-input::placeholder{
+    color: var(--placeholder-color);
+    text-align: left;
 }
-.album-disco figure:hover > .info-disco h3{
-    margin-top: 70px;
-    margin-bottom: 15px;
+
+.sec-guardado{
+    display: flex;
+    justify-content: space-between;
+    color: var(--bg-color);
+    margin:10px 0 10px 0;
+    
 }
-.album-disco figure .info-disco h3{
+.sec-guardado #recordar-contraseña{
+    background-color: var(--login-bg);
+    border: none;
+    color: var(--bg-color);
+    font-weight: bold;
+}
+#recordar-contraseña:hover{
+    color: rgb(255, 237, 0);
+}
+.btn-general{
+    height: 40px;
+    border-radius: 10px;
+    margin: 20px 0 10px 0;
+    border:none;
+    background-color: var(--login-stroke);
     color: #fff;
-    font-weight: 400;
-    margin-bottom: 120px;
-    transition: all 500ms ease-out;
-    margin-top: 30px;
+    font-weight: bolder;
+    box-shadow: 0px 5px 5px 
+    rgba(0, 0, 0, 0.53);
+    margin: 10px 0 10px 0;
 }
 
-.album-disco figure .info-disco p{
-    color: #fff;
+.btn-general:hover{
+    background-color: #454343;
+    
+}
+.btn-general:active{
+    background-color: #000000;
+}
+
+.estilos-check{
+    color:var(--bg-color);
     font-size: 15px;
-    line-height: 1.5;
-    width: 100%;
+    margin:20px 0 10px 0;
 
-} */
+}
+.info-user{
+    display: flex;
+    justify-content: space-between;
+   
+}
+.info-reg{
+    margin:20px 0 10px 0;
+    background-color: var(--background-label);
+    text-indent: 15px;
+    height: 40px;
+    width: 190px;
+    border-radius: 10px;
+    border: none;
+}
+.info-reg::placeholder{
+    color: var(--placeholder-color);
+    text-align: left;
+}
+.registrate{
+    display: flex;
+    justify-content:end;
+}
+.registrate label{
+    color: white;
+    font-size: 15px;
+    margin-left: 95px;
+    padding: 20px 10px 20px 0;
+   
+}
+.registrate input{
+    background-color: var(--login-bg);
+    border: none;
+    color: rgb(255, 237, 0);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.registrate input:hover{
+    color: var(--buttons-login-extra);
+}
+
+.btns-sesion{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-sesion{
+    margin: 20px 0 20px 0;
+    width: 190px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: var(--bg-color);
+    background-color: var(--buttons-login-extra);
+    box-shadow: 0px 5px 5px 
+    rgba(0, 0, 0, 0.53);
+}
+.btn-sesion:hover{
+    background-color: #c8be2b;
+}
+.btn-sesion:active{
+    background-color: #5f5a13;
+}
+
+.sec-sesion fieldset{
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    
+}
+.sec-sesion legend{
+    color: white;
+    margin: 0 auto;
+    padding: 10px 10px 0px 10px;
+}
+
+.btn-reg{
+    margin-top: 25px;
+    width: 400px;
+    height: 40px;
+}
+.btn-reg input{
+    width: 100%;
+}

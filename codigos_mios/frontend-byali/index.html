@@ -40,37 +40,103 @@
             
             
         </section>
-        
+        <section id="inicio-sesion">
+            <div class="sec-sesion">
+                <h3>Iniciar sesión</h3>
+                <input type="email" name="email" id="email" placeholder="Email" class="sec-input" required>
+                <input type="password" name="clave" id="clave" placeholder="Contraseña" class="sec-input" required>
+                <div class="sec-guardado">
+                    <label class="estilos-check">
+                        <input type="checkbox">
+                        Recuerda
+                    </label>
+                    <input type="submit" id="recordar-contraseña" value="¿No recordas tu contraseña?">
+                </div>
+                <input type="submit" id="iniciar-sesion" value="Ingresar sesión" class="btn-general">
+                <div class="registrate">
+                    <label for="registro">¿No tenes cuenta?</label>
+                    <input type="submit" name="registro" value="Registrate">
+                </div>
+                <fieldset>
+                    <legend>o inicia con</legend>
+                    <div class="btns-sesion">
+                        <!-- poner emoji dentro del boton -->
+                        <input type="submit" value="Cuenta de Google" class="btn-sesion">
+                        <input type="submit" value="Cuenta de Facebook" class="btn-sesion">
+                    </div>
+                </fieldset>
+            </div>
+        </section>
+
+        <section class="registro">
+            <div class="sec-sesion">
+                <h3>Registro</h3>
+                <div class="info-user">
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="info-reg" required>
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="info-reg">
+                </div>
+                <input type="email" name="nueva-email" id="nueva-email" placeholder="Email" class="sec-input" required>
+                <input type="text" name="nueva-contra" id="nueva-contra" placeholder="Contraseña" class="sec-input" required>
+                <select name="pais" id="pais" class="sec-input">
+                    <!-- falta el texto de Seleccionar país -->
+                    <option value="argentina">Argentina</option>
+                    <option value="Paraguay">Paraguay</option> 
+                </select>
+                <label class="estilos-check">
+                    <input type="checkbox">
+                    Deseo recibir novedades al correo electrónico
+                </label>
+                <div class="btn-reg">
+                    <input type="submit" value="Registrarse" class="btn-general">
+                </div>
+                
+            </div>
+           
             
+        </section>
         <section id="discografia">
             <h2>Discografía</h2>
             <div class="sec-discos">
-                    <div class="album-disco">
-                        <figure>
-                            <img src="./static/ab67616d0000b2739eb71b7fe146a474ff2b607e(1).jpeg" alt="Sobre el amor y sus efectos secundarios">
-                        </figure>
+                    <div class="album-img">
                         <div class="info-disco">
-                            <h3>titulo del disco</h3>
-                            <p>informacion del album soda stereo</p>
+                            <h3>Sobre el amor y sus efectos secundarios</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod delectus amet fuga alias veniam dicta, pariatur maiores obcaecati eaque reiciendis eius sint nesciunt iusto vel porro aliquid laboriosam sit! Ad.</p>
                         </div>
+                        <img src="./static/ab67616d0000b2739eb71b7fe146a474ff2b607e(1).jpeg" alt="Sobre el amor y sus efectos secundarios">
                     </div>
                     <div class="album-img">
-                        <div class="info-hover">
-                            <h3>hola </h3>
-                            <p>infomracion de los disocs ahre</p>
+                        <div class="info-disco">
+                            <h3>Balas Perdidas</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod delectus amet fuga alias veniam dicta, pariatur maiores obcaecati eaque reiciendis eius sint nesciunt iusto vel porro aliquid laboriosam sit! Ad.</p>
                         </div>
                         <img src="./static/morat_balas_perdidas-portada(1).jpg" alt="Balas Perdidas">
                     </div>
                     <div class="album-img">
+                        <div class="info-disco">
+                            <h3>A donde vamos</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod delectus amet fuga alias veniam dicta, pariatur maiores obcaecati eaque reiciendis eius sint nesciunt iusto vel porro aliquid laboriosam sit! Ad.</p>
+                        </div>
                         <img src="./static/morat_a_donde_vamos-portada(1).jpg" alt="A dónde vamos">
                     </div>
                     <div class="album-img">
+                        <div class="info-disco">
+                            <h3>Si ayer fuera hoy</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod delectus amet fuga alias veniam dicta, pariatur maiores obcaecati eaque reiciendis eius sint nesciunt iusto vel porro aliquid laboriosam sit! Ad.</p>
+                        </div>
                         <img src="./static/morat_si_ayer_fuera_hoy-portada(1).jpg" alt="Si ayer fuera hoy">
                     </div>
                     <div class="album-img">
+                        <div class="info-disco">
+                            <h3>Antes que amanezca</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod delectus amet fuga alias veniam dicta, pariatur maiores obcaecati eaque reiciendis eius sint nesciunt iusto vel porro aliquid laboriosam sit! Ad.</p>
+                        </div>
                         <img src="./static/morat_antes_de_que_amanezca-portada.jpg" alt="Antes que amanezca">
                     </div>
                     <div class="album-img">
+                        <div class="info-disco">
+                            <h3>Faltas tu</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod delectus amet fuga alias veniam dicta, pariatur maiores obcaecati eaque reiciendis eius sint nesciunt iusto vel porro aliquid laboriosam sit! Ad.</p>
+                        </div>
                         <img src="./static/faltas_tu-portada(1).jpg" alt="Faltas Tu">
                     </div>
 
