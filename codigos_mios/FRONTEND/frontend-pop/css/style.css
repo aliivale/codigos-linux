@@ -1,0 +1,300 @@
+:root{
+    --bg-color: #EDEDED; /* color del fondo */
+    --primary-color: white; /* color de las letras */
+    --secondary-color:#121212; /* lo mismo que el anterior pero al reves */
+    --third-color:#FFED00; /* este es muy variable, lo use en el boton de Conoce más y en el Registrate */
+    --login-bg:#4F4F4F; /* color del fondo del login */
+    --header-footer-bgcolor:#000000; /* color del fondo del footer */
+    --login-stroke: #A7A7A7; /* borde del login */
+    --button-unselected-color: #838383; /* boton desseleccionado */
+    --buttons-login-extra: #8A821C; /* botones de google y facebook en el login */
+    --placeholder-color: #A5A5A5; /* color de la letra de Mail, Contraseña, etc */
+    --background-label:#383838;
+    --cancionesmasescuchadas-bg: #242124; /* esto refiere al fondo de la sección */
+    --cancionesmasescuchadas-buttoncontainer: #474747; /* esto refiere al fondo del contenedor de los botones*/
+    --cancionesmasescuchadas-button-color: #D2D2D2; /* el color del boton de play por ej */
+
+    --discografia-bg: #CCCCCC; /* el fondo de discografía */
+    
+    /* fuente de toda la pag */
+    --primary-font: "Plus Jakarta Sans", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: var(--primary-font);
+    box-sizing: border-box;
+}
+
+/* -----------------LOGIN--------------------------- */
+
+.nav-container .login-button section#inicio-sesion{
+    visibility: hidden;
+    cursor: default;
+}
+
+.nav-container .login-button:hover section#inicio-sesion{
+    visibility: visible;
+    cursor: default;
+}
+
+.nav-container .login-button section#inicio-sesion:hover .sec-sesion{
+    visibility: visible;
+    cursor: default;
+}
+
+.login-button #inicio-sesion{
+    right: 0;
+    position: absolute;
+    top: 3vh;
+    width: 450px;
+    padding: 35px;
+}
+
+.login-button #inicio-sesion .sec-sesion{
+    position: absolute;
+    top: 6vh;
+    right: 0;
+}
+
+.sec-sesion{
+    width: 450px;
+    border-radius: 20px;
+    padding: 30px 25px;
+    background-color: var(--login-bg);
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+}
+.sec-sesion h3{
+    padding: 20px 0 0 5px;
+    text-align: left;
+    color:var(--primary-color);
+}
+
+/* con esto se activa el registro */
+.registro{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#cerrar{
+    position: absolute;
+    margin-left: 375px;
+    width: 2%;
+    
+}
+
+ 
+.sec-registro{
+    width: 450px;
+    padding: 30px 25px;
+}
+.sec-registro h3{
+    padding: 20px 0 0 5px;
+    color:var(--primary-color);
+}
+.sec-input{
+    height: 40px;
+    margin:20px 0 10px 0;
+    border-radius: 8px;
+    background-color: var(--background-label);
+    text-indent: 15px;
+    color: var(--bg-color);
+    border: 1px solid transparent; 
+}
+
+.sec-input::placeholder{
+    color: var(--placeholder-color);
+    text-align: left;
+}
+
+.sec-guardado{
+    display: flex;
+    justify-content: space-between;
+    color: var(--bg-color);
+    padding: 25px 0;
+}
+
+.sec-guardado label{
+    width: auto;
+    
+}
+
+
+
+
+  
+
+
+
+.sec-guardado #recordar-contraseña{
+    background-color: var(--login-bg);
+    width: auto;
+    border: none;
+    color: var(--bg-color);
+    font-weight: bold;
+}
+
+#recordar-contraseña:hover{
+    color: rgb(255, 237, 0);
+}
+.btn-general{
+    height: 40px;
+    border-radius: 10px;
+    margin: 20px 0 10px 0;
+    border:none;
+    background-color: var(--login-stroke);
+    color: #fff;
+    font-weight: bolder;
+    box-shadow: 0px 5px 5px 
+    rgba(0, 0, 0, 0.53);
+    margin: 10px 0 10px 0;
+}
+
+.btn-general:hover{
+    background-color: #454343;
+    
+}
+.btn-general:active{
+    background-color: #000000;
+}
+
+.estilos-check{
+    
+    color:var(--bg-color);
+    font-size: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sec-registro .estilos-check{
+    
+    padding: 25px 0;
+}
+
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    margin-right: 7px;
+    border-radius: 5px;
+    border: none;
+    appearance: none;
+    outline: none;
+    transition: outline 0.1s;
+    background-color: #383838;
+    
+}
+
+
+
+
+  input[type="checkbox"]:not(:disabled):checked {
+    background-image: url('../img/check.png');
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #1f1f1f;
+  }
+  
+
+  input[type="checkbox"]:disabled {
+    background-color: var(--checkbox-disabled-bg-color);
+  }
+  
+
+
+  input[type="checkbox"]:not(:disabled):hover {
+    background-color: #303030;
+  }
+
+.info-user{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+.info-reg{
+    margin:20px 0 10px 0;
+    background-color: var(--background-label);
+    text-indent: 15px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+}
+.info-reg::placeholder{
+    color: var(--placeholder-color);
+    text-align: left;
+}
+.registrate{
+    display: flex;
+    justify-content: flex-end;
+}
+.registrate label{
+    padding: 25px 0;
+    color: white;
+    font-size: 15px;
+    width: auto;
+    
+   
+}
+
+.registrate label a{
+    background-color: var(--login-bg);
+    border: none;
+    color: rgb(255, 237, 0);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: right;
+    width: 80px;
+    padding-right: 0;
+}
+
+.registrate input:hover{
+    color: var(--buttons-login-extra);
+}
+
+.btns-sesion{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.btn-sesion{
+    margin: 15px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: var(--bg-color);
+    background-color: var(--buttons-login-extra);
+    box-shadow: 0px 5px 5px 
+    rgba(0, 0, 0, 0.53);
+}
+.btn-sesion:hover{
+    background-color: #c8be2b;
+}
+.btn-sesion:active{
+    background-color: #5f5a13;
+}
+
+.sec-sesion fieldset{
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    
+}
+.sec-sesion legend{
+    font-size: 15px;
+    color: white;
+    margin: 0 auto;
+    padding: 10px 10px 0px 10px;
+}
+
+
+.btn-reg input{
+    width: 100%;
+}
