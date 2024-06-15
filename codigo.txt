@@ -1,0 +1,28 @@
+import os
+from PIL import Image
+import io
+
+def convert_images_to_bytearray(folder_path):
+    bytearrays = {}
+    # Recorrer todos los archivos en la carpeta
+    for filename in os.listdir(folder_path):
+        if filename.lower().endswith('.jpg') or filename.lower().endswith('.jpeg'):
+            file_path = os.path.join(folder_path, filename)
+            with Image.open(file_path) as img:
+                with io.BytesIO() as buffer:
+                    img.save(buffer, format='JPEG')
+                    byte_array = bytearray(buffer.getvalue())
+                    bytearrays[filename] = byte_array
+                    print(f"Convertido: {filename} - Tamaño: {len(byte_array)} bytes")
+    return bytearrays
+
+# Ruta de la carpeta que contiene las imágenes
+folder_path = 'ruta/a/tu/carpeta'
+
+# Convertir las imágenes en la carpeta a bytearrays
+bytearrays_dict = convert_images_to_bytearray(folder_path)
+
+# Ahora puedes acceder a los bytearrays por el nombre del archivo
+for filename, byte_array in bytearrays_dict.items():
+    print(f"{filename}: {len(byte_array)} bytes")
+
